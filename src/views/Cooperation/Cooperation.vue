@@ -1404,28 +1404,18 @@
     </div>
     <div id="nav_main">
       <ul id="nav" class="nav w1200p clearfix">
-        <li id="cur" class="item hvr-underline-from-center2 hover"><a rel="canonical"
-                                                                      title="网站首页">网站首页</a></li>
+        <li id="cur" :class="{'hover':navId===1}" class="item hvr-underline-from-center2" @click="getnav(1)"><a
+            rel="canonical"
+            title="网站首页">网站首页</a></li>
 
-        <li class="item hvr-underline-from-center2"><a title="质量系统展示">质量系统展示</a>
+        <li :class="{'hover':navId===2}" class="item hvr-underline-from-center2" @click="getnav(2)"><a
+            title="质量系统展示">质量系统展示</a>
         </li>
-        <li class="item hvr-underline-from-center2"><a title="质量系统介绍">质量系统介绍</a>
+        <li :class="{'hover':navId===3}" class="item hvr-underline-from-center2" @click="getnav(3)"><a
+            title="质量系统介绍">质量系统介绍</a>
         </li>
-        <li class="item hvr-underline-from-center2"><a title="质量系统方案">质量系统方案</a>
-
-          <!--          <ul class="subnav">-->
-
-          <!--            <li class="nav1"><a class="subA"-->
-          <!--                                title="质量管理系统">质量管理系统</a></li>-->
-          <!--            <li class="nav1"><a class="subA"-->
-          <!--                                title="追溯管理系统">追溯管理系统</a></li>-->
-          <!--            <li class="nav1"><a class="subA"-->
-          <!--                                title="售后服务系统">售后服务系统</a></li>-->
-          <!--          </ul>-->
-        </li>
-        <li class="item hvr-underline-from-center2"><a title="质量系统定制">质量系统定制</a>
-        </li>
-        <li class="item hvr-underline-from-center2"><a title="质量系统案例">质量系统案例</a>
+        <li :class="{'hover':navId===4}" class="item hvr-underline-from-center2" @click="getnav(4)"><a
+            title="质量系统方案">质量系统方案</a>
 
           <!--          <ul class="subnav">-->
 
@@ -1437,158 +1427,559 @@
           <!--                                title="售后服务系统">售后服务系统</a></li>-->
           <!--          </ul>-->
         </li>
-        <li class="item hvr-underline-from-center2"><a title="质量系统价格">质量系统价格</a>
+        <li :class="{'hover':navId===5}" @click="getnav(5)" class="item hvr-underline-from-center2"><a title="质量系统定制">质量系统定制</a>
         </li>
-        <li class="item hvr-underline-from-center2"><a title="质量系统知识">质量系统知识</a>
+        <li :class="{'hover':navId===6}" @click="getnav(6)" class="item hvr-underline-from-center2"><a title="质量系统案例">质量系统案例</a>
+
+          <!--          <ul class="subnav">-->
+
+          <!--            <li class="nav1"><a class="subA"-->
+          <!--                                title="质量管理系统">质量管理系统</a></li>-->
+          <!--            <li class="nav1"><a class="subA"-->
+          <!--                                title="追溯管理系统">追溯管理系统</a></li>-->
+          <!--            <li class="nav1"><a class="subA"-->
+          <!--                                title="售后服务系统">售后服务系统</a></li>-->
+          <!--          </ul>-->
+        </li>
+        <li :class="{'hover':navId===7}" @click="getnav(7)" class="item hvr-underline-from-center2"><a title="质量系统价格">质量系统价格</a>
+        </li>
+        <li :class="{'hover':navId===8}" @click="getnav(8)" class="item hvr-underline-from-center2"><a title="质量系统知识">质量系统知识</a>
         </li>
       </ul>
     </div>
-    <div class="solutions">
-      <div class="solute w1200 clearfix">
-        <div aos="fade-down" aos-delay="100" aos-duration="700" aos-easing="ease"
-             class="head_tit clearfix aos-init aos-animate">
+    <div v-if="navId===1">
+      <div class="solutions">
+        <div class="solute w1200 clearfix">
+          <div aos="fade-down" aos-delay="100" aos-duration="700" aos-easing="ease"
+               class="head_tit clearfix aos-init aos-animate">
 
 
-          <div class="title"><h2 class="tit">质量系统方案</h2>
-            <p class="etit"></p></div>
+            <div class="title"><h2 class="tit">质量系统方案</h2>
+              <p class="etit"></p></div>
+          </div>
+          <div id="solute" class="slideBox">
+            <!--推荐内容开始-->
+            <div aos="fade-right" aos-delay="100" aos-duration="700" aos-easing="ease" class="bd aos-init aos-animate">
+
+              <!--质量管理系统开始-->
+
+
+              <ul class="list">
+                <li v-if="fadeId===1" class="item clearfix"><a
+                    title="汽车制造行业质量管理系统解决方案"><img
+                    alt="汽车制造行业质量管理系统解决方案"
+                    class="img"
+                    src="@/assets/zr/2024011663843421.png">
+                  <div class="txt"><h2 class="tit">汽车制造行业质量管理系统解决…</h2>
+                    <p class="cont">1、进料检验、供应商管理、制造过程、售后质量管理等数据多为纸面手工记录分散在部门，质量数据信息共享难度大。2
+                      、质量数字化建设存在断层，使质量管理成为“黑匣子”随着企业发展，在运营管理中数字化建设初见成效。但在质量…</p>
+                  </div>
+                </a></li>
+              </ul>
+              <!--质量管理系统结束-->
+
+              <!--追溯管理系统开始-->
+
+
+              <ul v-if="fadeId===2" class="list">
+                <li class="item clearfix"><a title="中药生产质量管理系统追溯解决方案"><img
+                    alt="中药生产质量管理系统追溯解决方案"
+                    class="img"
+                    src="@/assets/zr/2023041441422749.png">
+                  <div class="txt"><h2 class="tit">中药生产质量管理系统追溯解决…</h2>
+                    <p class="cont">
+                      一、建设背景通过对中药材种植和养殖基地、中药饮片生产企业和中成药生产企业、中药饮片经营企业、医疗机构及零售药店等环节的关键信息建立电子化登记、管理和查询，构建“中药材溯源平台系统”，溯源维度覆盖从中药材种植、采收…</p>
+                  </div>
+                </a></li>
+              </ul>
+              <!--追溯管理系统结束-->
+
+              <!--售后服务系统开始-->
+
+
+              <ul v-if="fadeId===3" class="list">
+                <li class="item clearfix"><a
+                    title="汽车制造业售后服务系统解决方案"><img
+                    alt="汽车制造业售后服务系统解决方案"
+                    class="img"
+                    src="@/assets/zr/2024011637144701.png">
+                  <div class="txt"><h2 class="tit">汽车制造业售后服务系统解决方…</h2>
+                    <p class="cont">
+                      1、数据洞察透视难：手工报表耗时耗力，数据的规范统计力度不够，业务存在数据孤岛，数据分析不准确不及时，无法充分利用信息，使决策精准2、客户管理粗放：客户信息散落在各个业务员或部门，客户未资产化管理，客户经营未体系化…</p>
+                  </div>
+                </a></li>
+              </ul>
+              <!--售后服务系统结束-->
+
+            </div>
+            <!--推荐内容结束-->
+
+            <!--方案分类开始-->
+            <div aos="fade-left" aos-delay="100" aos-duration="700" aos-easing="ease" class="hd aos-init aos-animate">
+              <!--            <span class="arrow"><a class="prev"></a><a class="next"></a></span>-->
+              <ul class="list">
+
+
+                <li :class="{'on':fadeId===1}" class="item1" @mouseenter="getfade(1)"><a title="质量管理系统">
+                  <div class="txt"><h2 class="tit">质量管理系统</h2>
+                    <p class="etit"></p></div>
+                </a></li>
+
+                <li :class="{'on':fadeId===2}" class="item2" @mouseenter="getfade(2)"><a title="追溯管理系统">
+                  <div class="txt"><h2 class="tit">追溯管理系统</h2>
+                    <p class="etit"></p></div>
+                </a></li>
+
+                <li :class="{'on':fadeId===3}" class="item3" @mouseenter="getfade(3)"><a title="售后服务系统">
+                  <div class="txt"><h2 class="tit">售后服务系统</h2>
+                    <p class="etit"></p></div>
+                </a></li>
+              </ul>
+            </div>
+            <!--方案分类结束-->
+          </div>
         </div>
-        <div id="solute" class="slideBox">
-          <!--推荐内容开始-->
-          <div aos="fade-right" aos-delay="100" aos-duration="700" aos-easing="ease" class="bd aos-init aos-animate">
-
-            <!--质量管理系统开始-->
-
-
-            <ul class="list">
-              <li v-if="fadeId===1" class="item clearfix"><a
-                  title="汽车制造行业质量管理系统解决方案"><img
-                  alt="汽车制造行业质量管理系统解决方案"
-                  class="img"
-                  src="@/assets/zr/2024011663843421.png">
-                <div class="txt"><h2 class="tit">汽车制造行业质量管理系统解决…</h2>
-                  <p class="cont">1、进料检验、供应商管理、制造过程、售后质量管理等数据多为纸面手工记录分散在部门，质量数据信息共享难度大。2
-                    、质量数字化建设存在断层，使质量管理成为“黑匣子”随着企业发展，在运营管理中数字化建设初见成效。但在质量…</p>
-                </div>
-              </a></li>
-            </ul>
-            <!--质量管理系统结束-->
-
-            <!--追溯管理系统开始-->
+      </div>
+      <div class="icaseShow">
+        <div class="icase w1200 clearfix">
+          <div aos="fade-down" aos-delay="100" aos-duration="700" aos-easing="ease"
+               class="head_tit clearfix aos-init aos-animate">
 
 
-            <ul v-if="fadeId===2" class="list">
-              <li class="item clearfix"><a title="中药生产质量管理系统追溯解决方案"><img
-                  alt="中药生产质量管理系统追溯解决方案"
-                  class="img"
-                  src="@/assets/zr/2023041441422749.png">
-                <div class="txt"><h2 class="tit">中药生产质量管理系统追溯解决…</h2>
-                  <p class="cont">
-                    一、建设背景通过对中药材种植和养殖基地、中药饮片生产企业和中成药生产企业、中药饮片经营企业、医疗机构及零售药店等环节的关键信息建立电子化登记、管理和查询，构建“中药材溯源平台系统”，溯源维度覆盖从中药材种植、采收…</p>
-                </div>
-              </a></li>
-            </ul>
-            <!--追溯管理系统结束-->
-
-            <!--售后服务系统开始-->
-
-
-            <ul v-if="fadeId===3" class="list">
-              <li class="item clearfix"><a
-                  title="汽车制造业售后服务系统解决方案"><img
-                  alt="汽车制造业售后服务系统解决方案"
-                  class="img"
-                  src="@/assets/zr/2024011637144701.png">
-                <div class="txt"><h2 class="tit">汽车制造业售后服务系统解决方…</h2>
-                  <p class="cont">
-                    1、数据洞察透视难：手工报表耗时耗力，数据的规范统计力度不够，业务存在数据孤岛，数据分析不准确不及时，无法充分利用信息，使决策精准2、客户管理粗放：客户信息散落在各个业务员或部门，客户未资产化管理，客户经营未体系化…</p>
-                </div>
-              </a></li>
-            </ul>
-            <!--售后服务系统结束-->
-
+            <div class="title"><h2 class="tit">质量系统案例</h2>
+              <p class="etit"></p></div>
           </div>
-          <!--推荐内容结束-->
-
-          <!--方案分类开始-->
-          <div aos="fade-left" aos-delay="100" aos-duration="700" aos-easing="ease" class="hd aos-init aos-animate">
-            <!--            <span class="arrow"><a class="prev"></a><a class="next"></a></span>-->
-            <ul class="list">
 
 
-              <li :class="{'on':fadeId===1}" class="item1" @mouseenter="getfade(1)"><a title="质量管理系统">
-                <div class="txt"><h2 class="tit">质量管理系统</h2>
-                  <p class="etit"></p></div>
-              </a></li>
+        </div>
 
-              <li :class="{'on':fadeId===2}" class="item2" @mouseenter="getfade(2)"><a title="追溯管理系统">
-                <div class="txt"><h2 class="tit">追溯管理系统</h2>
-                  <p class="etit"></p></div>
-              </a></li>
+        <div class="caseMain">
+          <div id="icase" class="caseList w1200 clearfix">
+            <div class="bd">
+              <ul class="list">
 
-              <li :class="{'on':fadeId===3}" class="item3" @mouseenter="getfade(3)"><a title="售后服务系统">
-                <div class="txt"><h2 class="tit">售后服务系统</h2>
-                  <p class="etit"></p></div>
-              </a></li>
-            </ul>
+
+                <li aos="fade-left" aos-delay="100" aos-duration="700" aos-easing="ease" class="aos-init aos-animate"><a
+                    title="美的冷柜高新区工厂售后服务系统"><img
+                    alt="美的冷柜高新区工厂售后服务系统" class="img" src="@/assets/zr/2024011653155277.png">
+                  <div class="txt"><h2 class="tit">美的冷柜高新区工厂售后服务系…</h2>
+                    <p class="cont">美的冷柜合肥工业园位于安徽省合肥市高新区玉兰大道，是中国最具规模的…</p>
+                    <p class="more">MORE &gt;</p></div>
+                </a></li>
+
+                <li aos="fade-left" aos-delay="200" aos-duration="700" aos-easing="ease" class="aos-init aos-animate"><a
+                    title="江淮华霆追溯管理系统"><img
+                    alt="江淮华霆追溯管理系统"
+                    class="img"
+                    src="@/assets/zr/2023122964270393.png">
+                  <div class="txt"><h2 class="tit">江淮华霆追溯管理系统</h2>
+                    <p class="cont">江淮华霆动力电池有限公司是一家新能源汽车动力系统研发商，主营汽车零…</p>
+                    <p class="more">MORE &gt;</p></div>
+                </a></li>
+
+                <li aos="fade-left" aos-delay="300" aos-duration="700" aos-easing="ease" class="aos-init aos-animate"><a
+                    title="安徽美芝性能线质量管理系统"><img
+                    alt="安徽美芝性能线质量管理系统"
+                    class="img"
+                    src="@/assets/zr/2024011656964045.png">
+                  <div class="txt"><h2 class="tit">安徽美芝性能线质量管理系统</h2>
+                    <p class="cont">稷生科技有限公司是GMCC美芝四大生产基地之一，位于安徽省合肥…</p>
+                    <p class="more">MORE &gt;</p></div>
+                </a></li>
+              </ul>
+            </div>
+            <div class="hd">
+              <span class="prev icon"></span>
+              <span class="next icon"></span>
+            </div>
           </div>
-          <!--方案分类结束-->
+        </div>
+      </div>
+      <div class="aboutus">
+        <div class="about w1200 clearfix">
+          <div class="aboutImg aos-init aos-animate">
+            <div class="aboutBg"></div>
+            <div class="aImg">
+
+              <img alt="质量管理网" class="img" src="@/assets/zr/about.jpg">
+              <h2 class="tit">ABOUT</h2></div>
+          </div>
+
+          <div class="aboutCont aos-init aos-animate">
+            <div class="about_tit">
+              <h2 class="cName">关于我们</h2>
+              <p class="eName">ABOUT</p>
+              <div class="line"></div>
+            </div>
+            <p class="cont">合肥星服信息科技有限责任公司是专业从事信息工程技术服务的软件开发公司，具备软件项目的系统设计、软件开发、项目实施、技术支持能力并提供相关系统集成、技术转让和技术咨询服务的软件公司。
+
+              在制造业信息化方面，合肥星服提出了一系列多行业、集成化、模块化的精益制造执行系统解决方案。汇集了众多对制造业有深入研究的专家的成果，针对制造型企业的信息化整合提供整体解决方案。通过对生产过程信息化控制和上下游信息整合，帮助企业从根本上改变生产管理模式，提升效益，增强企业竞争优势。
+
+              公司的主要产品有MES制造执行系统、仓库管理系统、质量管理系统、数据采集管理系统、看板管理系统、物流管理系统、工时管理系统等，帮助企业实现......。
+            </p>
+            <div class="line1"></div>
+            <a class="more">MORE &gt;</a></div>
+        </div>
+      </div>
+      <div class="companyNews">
+        <div class="comNew w1200 clearfix">
+          <div aos="fade-down" aos-delay="100" aos-duration="700" aos-easing="ease"
+               class="head_tit clearfix aos-init aos-animate">
+
+
+            <div class="title"><h2 class="tit">质量系统知识</h2>
+              <p class="etit"></p></div>
+            <a class="more" href="/list/73/">MORE &gt;</a></div>
+          <div class="showNew clearfix">
+            <!--推荐内容开始-->
+            <div aos="fade-right" aos-delay="100" aos-duration="700" aos-easing="ease"
+                 class="left aos-init aos-animate">
+              <div id="inews" class="rest">
+                <div class="bd clearfix">
+                  <div class="tempWrap" style="overflow:hidden; position:relative; width:440px">
+                    <ul class="list"
+                        style="width: 440px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: 0px;">
+
+
+                      <li class="item clearfix" style="float: left; width: 440px;"><a
+                          href="http://qms.messoft.net.cn/list/73/56.html" title="QMS质量管理系统"><img
+                          alt="QMS质量管理系统" src="@/assets/zr/2021042342746049.png">
+                        <div class="txt"><h2 class="tit">QMS质量管理系统</h2>
+                          <p class="cont">
+                            QMS质量管理系统的介绍随着信息化程度的加深，制造领域里面的传统企业正在面临着各种各样的挑战和压力。企业如…</p>
+                        </div>
+                      </a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="hd">
+                  <ul class="iconList">
+                    <li class="on">1</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!--推荐内容结束-->
+
+            <div aos="fade-left" aos-delay="100" aos-duration="700" aos-easing="ease"
+                 class="right aos-init aos-animate">
+              <div class="showList">
+                <ul class="list">
+
+
+                  <li class="item clearfix"><a href="http://qms.messoft.net.cn/list/73/365.html"
+                                               title="标准件厂工艺参数和检测参数都有哪些？">
+                    <div class="time"><h2 class="day">11</h2>
+                      <p class="year">2025-3</p></div>
+                    <div class="txt"><h2 class="tit">标准件厂工艺参数和检测参数都…</h2>
+                      <p class="cont">随着工业信息化的发展，标准件的生产和质量管理面临着越来越高的要求，…</p></div>
+                  </a></li>
+
+                  <li class="item clearfix"><a href="http://qms.messoft.net.cn/list/73/364.html"
+                                               title="企业如何平衡成本与质量之间关系">
+                    <div class="time"><h2 class="day">10</h2>
+                      <p class="year">2024-9</p></div>
+                    <div class="txt"><h2 class="tit">企业如何平衡成本与质量之间关…</h2>
+                      <p class="cont">在竞争激烈的市场环境中，企业面临着前所未有的挑战：如何在保证产品质…</p></div>
+                  </a></li>
+
+                  <li class="item clearfix"><a href="http://qms.messoft.net.cn/list/73/363.html"
+                                               title="品质管理体系运作的核心是什么？">
+                    <div class="time"><h2 class="day">28</h2>
+                      <p class="year">2024-8</p></div>
+                    <div class="txt"><h2 class="tit">品质管理体系运作的核心是什么…</h2>
+                      <p class="cont">在当今竞争激烈的市场环境中，品质不仅是企业生存的基石，更是其持续发…</p></div>
+                  </a></li>
+
+                  <li class="item clearfix"><a href="http://qms.messoft.net.cn/list/73/362.html"
+                                               title="门窗生产质量管理系统">
+                    <div class="time"><h2 class="day">19</h2>
+                      <p class="year">2024-8</p></div>
+                    <div class="txt"><h2 class="tit">门窗生产质量管理系统</h2>
+                      <p class="cont"># 揭秘门窗制造背后的质量密码：从选材到质检的全链路解析 引言</p></div>
+                  </a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="icaseShow">
-      <div class="icase w1200 clearfix">
-        <div aos="fade-down" aos-delay="100" aos-duration="700" aos-easing="ease"
-             class="head_tit clearfix aos-init aos-animate">
+    <div v-if="navId===2">
+      <div class="content aboutPagePC clearfix aos-init aos-animate" aos="fade-up" aos-easing="ease" aos-duration="700" aos-delay="100">
+      <div class="txtcon"><p>
+        <br>
+      </p>
+        <p>
+          <br>
+        </p>
+        <h1 style="text-align: center;">
+          <span style="font-size: 36px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">质量系统展示</span>
+        </h1>
+        <p>
+          <br>
+        </p>
+        <h2 style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin-top: 0px; margin-bottom: 0px; color: rgb(102, 102, 102); font-family: &quot;microsoft yahei&quot;, 宋体, &quot;PingFang SC&quot;, &quot;Myriad Pro&quot;, &quot;AvantGarde Bk BT&quot;, Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 14px; text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);">
+          <strong style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin: 0px;"><span style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin: 0px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">一、<a href="http://qms.messoft.net.cn/list/60/" title="质量管理系统" target="_blank" class="sitelink">质量管理系统</a>展示</span></strong>
+        </h2>
+        <p style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin-top: 0px; margin-bottom: 0px; color: rgb(102, 102, 102); font-family: &quot;microsoft yahei&quot;, 宋体, &quot;PingFang SC&quot;, &quot;Myriad Pro&quot;, &quot;AvantGarde Bk BT&quot;, Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 14px; text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);">
+          <br>
+        </p>
+        <p style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin-bottom: 16px; text-align: justify; text-wrap: wrap; border: 0px solid; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; background-color: rgb(255, 255, 255); margin-top: 0px !important;">
+          <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><a href="http://qms.messoft.net.cn/list/60/" title="质量管理系统" target="_blank" class="sitelink">质量管理系统</a></span><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;">是企业在生产经营过程中为保证产品和服务质量而建立的一套规范和管理体系。它涵盖了从原材料采购、生产过程控制到最终产品检验的全过程，旨在提高产品质量、降低成本、满足客户需求，从而提升企业竞争力。</span>
+        </p>
+        <p style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin-top: 0px; margin-bottom: 0px; color: rgb(102, 102, 102); font-family: &quot;microsoft yahei&quot;, 宋体, &quot;PingFang SC&quot;, &quot;Myriad Pro&quot;, &quot;AvantGarde Bk BT&quot;, Arial, &quot;Helvetica Neue&quot;, Helvetica, &quot;sans-serif&quot;; font-size: 14px; text-align: justify; text-wrap: wrap; background-color: rgb(255, 255, 255);">
+          <strong style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin: 0px;"><span style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin: 0px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;"><br style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin: 0px;"></span></strong>
+        </p>
+        <p style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin-top: 0px; margin-bottom: 0px; color: rgb(102, 102, 102); font-family: &quot;microsoft yahei&quot;, 宋体, &quot;PingFang SC&quot;, &quot;Myriad Pro&quot;, &quot;AvantGarde Bk BT&quot;, Arial, &quot;Helvetica Neue&quot;, Helvetica, &quot;sans-serif&quot;; font-size: 14px; text-align: justify; text-wrap: wrap; background-color: rgb(255, 255, 255);">
+          <br>
+        </p>
+        <p style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin-top: 0px; margin-bottom: 0px; color: rgb(102, 102, 102); font-family: &quot;microsoft yahei&quot;, 宋体, &quot;PingFang SC&quot;, &quot;Myriad Pro&quot;, &quot;AvantGarde Bk BT&quot;, Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 14px; text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);">
+          <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;"><strong><img src="http://www.messoft.net.cn/upfile/202312/2023120736791297.jpg" title="产品质量追溯管理系统" alt="产品质量追溯管理系统" width="100%" border="0" vspace="0"></strong></span>
+        </p>
+        <p style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin-top: 0px; margin-bottom: 0px; color: rgb(102, 102, 102); font-family: &quot;microsoft yahei&quot;, 宋体, &quot;PingFang SC&quot;, &quot;Myriad Pro&quot;, &quot;AvantGarde Bk BT&quot;, Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">
+          <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin: 0px;"><span style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin: 0px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;"><strong style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin: 0px;"><strong style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin: 0px;"><br></strong></strong></span></strong><br></span>
+        </p>
+        <h2 style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin-top: 0px; margin-bottom: 0px; color: rgb(102, 102, 102); text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);">
+          <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;"><strong>二、追溯管理系统展示</strong></span>
+        </h2>
+        <p>
+          <span style="color: rgb(36, 41, 47); text-wrap: wrap; background-color: rgb(255, 255, 255); font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;">质量追溯系统的核心是信息的采集和记录。通过在生产过程中的各个环节采集数据，包括原材料的来源、加工工艺的参数、设备的状态等，将这些数据存储在数据库中，并与产品进行关联。当产品出现质量问题时，可以通过查询数据库，快速定位问题的源头，并采取相应的措施进行处理</span>
+        </p>
+        <p style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin-top: 0px; margin-bottom: 0px; color: rgb(102, 102, 102); text-align: center; white-space: normal; background-color: rgb(255, 255, 255);">
+          <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;"><strong><img src="@/assets/zr/2024011166293901.png" title="产品质量追溯管理系统" alt="产品质量追溯管理系统" width="100%" border="0" vspace="0"></strong></span>
+        </p>
+        <p style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin-top: 0px; margin-bottom: 0px; color: rgb(102, 102, 102); text-align: center; white-space: normal; background-color: rgb(255, 255, 255);">
+          <br>
+        </p>
+        <h2 style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin-top: 0px; margin-bottom: 0px; color: rgb(102, 102, 102); text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);">
+          <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;"><strong>三、售后服务系统展示</strong></span>
+        </h2>
+        <p style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin-top: 0px; margin-bottom: 0px; color: rgb(102, 102, 102); text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);">
+          <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;"><strong><br></strong></span>
+        </p>
+        <p style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin-top: 0px; margin-bottom: 0px; color: rgb(102, 102, 102); text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);">
+          <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;">售后服务软件是现代工厂管理中的一个重要组成部分。它是为了满足客户的售后需求而开发的一种软件工具。随着市场竞争的加剧和消费者对售后服务质量要求的提高，售后服务系统已经越来越受到工厂的重视。售后服务软件包括客户反馈管理、问题解决跟踪、服务记录管理等。通过这些功能，企业可以更好地管理和响应客户的售后需求，提供高质量的售后服务，提升客户满意度和忠诚度</span>
+        </p>
+        <p style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin-top: 0px; margin-bottom: 0px; color: rgb(102, 102, 102); text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);">
+          <img src="@/assets/zr/2024011243111285.png" title="image.png" alt="image.png" width="100%" border="0" vspace="0">
+        </p>
+        <p style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin-top: 0px; margin-bottom: 0px; color: rgb(102, 102, 102); text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);">
+          <br>
+        </p>
+        <p style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin-top: 0px; margin-bottom: 0px; color: rgb(102, 102, 102); text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);">
+          <br>
+        </p>
+        <p style="position: absolute; width: 1px; height: 1px; overflow: hidden; left: -1000px; white-space: nowrap; top: 2937px;">
+          <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><strong style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;"><br></span></strong></span>
+        </p></div></div>
+    </div>
+<div v-if="navId===3">
+  <div class="content aboutPagePC clearfix aos-init aos-animate" aos="fade-up" aos-easing="ease" aos-duration="700" aos-delay="100">
+    <div class="txtcon"><p>
+      <br>
+    </p>
+      <p>
+        <br>
+      </p>
+      <h1 style="text-align: center;">
+        <span style="font-size: 36px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">质量管理系统的介绍</span>
+      </h1>
+      <p>
+        <br>
+      </p>
+      <h2 style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin-top: 0px; margin-bottom: 0px; color: rgb(102, 102, 102); font-family: &quot;microsoft yahei&quot;, 宋体, &quot;PingFang SC&quot;, &quot;Myriad Pro&quot;, &quot;AvantGarde Bk BT&quot;, Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 14px; text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);">
+        <strong style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin: 0px;"><span style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin: 0px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">一、质量管理系统的概述</span></strong>
+      </h2>
+      <p style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin-top: 0px; margin-bottom: 0px; color: rgb(102, 102, 102); font-family: &quot;microsoft yahei&quot;, 宋体, &quot;PingFang SC&quot;, &quot;Myriad Pro&quot;, &quot;AvantGarde Bk BT&quot;, Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 14px; text-align: justify; white-space: normal; background-color: rgb(255, 255, 255);">
+        <br>
+      </p>
+      <p style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin-bottom: 16px; text-align: justify; text-wrap: wrap; border: 0px solid; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; background-color: rgb(255, 255, 255); margin-top: 0px !important;">
+        <span style="font-size: 16px;"></span><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;">质量管理系统（QMS）是企业中至关重要的一项工作，它涉及到产品质量管理、质量追溯管理系统以及索赔三包服务等多个方面。产品质量管理是企业保证产品质量的重要手段，通过建立完善的品质管理系统，企业能够对产品的各个环节进行有效控制，提升产品的质量和竞争力。</span>
+      </p>
+      <p style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin-bottom: 16px; text-align: justify; text-wrap: wrap; border: 0px solid; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; background-color: rgb(255, 255, 255); margin-top: 0px !important;">
+        <span style="font-size: 16px;"></span><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;">  品质管理系统是质量管理的核心，它包括了对原材料、生产过程和成品的全面监控和管理。通过建立科学的品质管理系统，企业可以确保产品在设计、生产、检验和交付等各个环节都符合质量标准和客户需求。这样一来，不仅可以减少产品的缺陷率，提高产品的可靠性，还能提升客户满意度和企业的声誉。</span>
+      </p>
+      <p style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin-bottom: 16px; text-align: justify; text-wrap: wrap; border: 0px solid; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; background-color: rgb(255, 255, 255); margin-top: 0px !important;">
+        <span style="font-size: 16px;"></span><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;">   在质量管理系统（QMS）中，质量追溯管理系统起到了重要的作用。它通过记录和追踪产品的生产过程、原材料来源以及销售渠道等信息，实现了对产品全生命周期的管理和追溯。一旦发生质量问题，企业可以迅速定位问题源头，采取相应措施，避免类似问题再次发生。质量追溯管理系统不仅有助于提高产品质量，还能够满足监管部门的要求，保证企业的合规性。</span>
+      </p>
+      <p style="-webkit-tap-highlight-color: rgba(255, 255, 255, 0); margin-bottom: 16px; text-align: justify; text-wrap: wrap; border: 0px solid; box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; background-color: rgb(255, 255, 255); margin-top: 0px !important;">
+        <span style="font-size: 16px;"></span><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;">  质量管理系统是企业提升产品质量和竞争力的重要手段。通过产品质量管理系统的综合应用，企业能够全面提升产品的质量水平，满足客户需求，赢得市场竞争优势。</span>
+      </p>
+      <p style="margin-bottom: 16px; text-align: justify; text-wrap: wrap;">
+        <h3 style="color: #666666">二、质量管理系统的功能</h3>
+      </p>
+      <p style="font-size: 16px;    color: #686868;">
+        质量管理系统总体功能包括：系统管理，个人设置，工艺管理，计划任务，产品制造，仓库，供应链，计量，工装辅具，计时计件，售后索赔，品质管理，文控管理，数据调度，溯源管理；
+      </p>
+      <p style="text-align: justify; text-wrap: wrap;">
+        <h4 style="color: #666666">1、系统管理包括：</h4>
+      </p>
+      <p style="font-size: 16px;    color: #686868;">
+        菜单管理，公司管理，部门管理，角色管理，权限管理，账号管理；
+      </p>
+      <p style=" text-align: justify; text-wrap: wrap;">
+        <h4 style="color: #666666">2、个人设置包括：</h4>
+      </p>
+      <p style="font-size: 16px;    color: #686868;">
+        账户设置；
+      </p>
+      <p style=" text-align: justify; text-wrap: wrap;">
+        <h4 style="color: #666666">3、工艺管理包括：</h4>
+      </p>
+      <p style="font-size: 16px;    color: #686868;">
+        项目，测试，产线，打印，同步，终端等相关配置；
+      </p>
+      <p style="text-align: justify; text-wrap: wrap;">
+        <h4 style="color: #666666">4、计划任务包括：</h4>
+      </p>
+      <p style="font-size: 16px;    color: #686868;">
+        工单，统计等相关工单配置及数据统计；
+      </p>
+      <p style=" text-align: justify; text-wrap: wrap;">
+        <h4 style="color: #666666">5、产品制造包括：</h4>
+      </p>
+      <p style="font-size: 16px;    color: #686868;">
+        生产，电芯，模组，线束，成组，总装，工位等相关功能；
+      </p>
+      <img style="display: flex" src="@/assets/zr/a1.png">
+      <p style=" text-align: justify; text-wrap: wrap;">
+        <h4 style="color: #666666">10、计时计件管理包括：</h4>
+      </p>
+      <p style="font-size: 16px;    color: #686868;">
+        生产报工，异常工时等相关功能；
+      </p>
+      <img style="display: flex" src="@/assets/zr/a2.png">
+      <p style=" text-align: justify; text-wrap: wrap;">
+        <h4 style="color: #666666">12、品质管理包括：</h4>
+      </p>
+      <p style="font-size: 16px;    color: #686868;">
+        1）品质-TEST包括：测试等相关功能；
+      </p>
+      <img style="display: flex" src="@/assets/zr/a3.png">
+      <p style=" text-align: justify; text-wrap: wrap;">
+        <h3 style="color: #666666">三、质量管理系统定制开发</h3>
+      </p>
+      <p style="font-size: 16px;    color: #686868;">
+        在使用质量管理系统软件（QMS）的时候，如果您觉得有部分功能不能满足，我们可以根据您的需求定制开发，定制开发有如下好处：<br/>
+        针对性强：每一个软件开发都经过系统的分析，针对不同企业情况量身定做的，大大提高企业的工作效率<br/>
+        使用方便：根据企业现有工作流程开发程序，用户只需具备基本计算机知识，就可以自如的操作软件<br/>
+        费用便宜：定制软件会开发企业所需的功能模块，删除不需要的功能，最大限度的节省开发费用<br/>
+        服务周到：定制软件在使用过程中出现的问题，我们会及时上门沟通调试,为你提供专业、迅捷的服务。
+      </p>
+     </div></div>
+  </div>
+    <div v-if="navId===4">
+      <div class="content w1200 newsPage clearfix aos-init aos-animate" aos="fade-up" aos-easing="ease" aos-duration="700" aos-delay="100">
 
 
-          <div class="title"><h2 class="tit">质量系统案例</h2>
-            <p class="etit"></p></div>
-        </div>
+        <ul class="list">
+
+
+          <li class="item clearfix"><a title="揭秘线束行业QMS质量管理：从入门到精通的全方位解析"><img class="fl" src="@/assets/zr/z5.png" alt="揭秘线束行业QMS质量管理：从入门到精通的全方位解析"><div class="time fr"><span class="day">05-15</span><span>2024</span></div><h3>揭秘线束行业QMS质量管理：从入门到精通的全方位解析</h3><div class="txt">线束作为现代电子设备和汽车制造中的关键部件，其质量和可靠性直接影响着产品的整体性能。因此，线束行业对于质量管理的要求尤为严格。本文将从QMS（Quality Management System，质量管理体系）的角…</div></a></li>
+
+          <li class="item clearfix"><a title="汽车制造业售后服务系统解决方案"><img class="fl" src="@/assets/zr/z2.png" alt="汽车制造业售后服务系统解决方案"><div class="time fr"><span class="day">01-15</span><span>2024</span></div><h3>汽车制造业售后服务系统解决方案</h3><div class="txt">1、数据洞察透视难：手工报表耗时耗力，数据的规范统计力度不够，业务存在数据孤岛，数据分析不准确不及时，无法充分利用信息，使决策精准2、客户管理粗放：客户信息散落在各个业务员或部门，客户未…</div></a></li>
+
+          <li class="item clearfix"><a title="汽车制造行业质量管理系统解决方案"><img class="fl" src="@/assets/zr/z3.png" alt="汽车制造行业质量管理系统解决方案"><div class="time fr"><span class="day">01-15</span><span>2024</span></div><h3>汽车制造行业质量管理系统解决方案</h3><div class="txt">1、进料检验、供应商管理、制造过程、售后质量管理等数据多为纸面手工记录分散在部门，质量数据信息共享难度大。2 、质量数字化建设存在断层，使质量管理成为“黑匣子”随着企业发展，在运营管理中…</div></a></li>
+
+          <li class="item clearfix"><a title="中药生产质量管理系统追溯解决方案"><img class="fl" src="@/assets/zr/z4.png" alt="中药生产质量管理系统追溯解决方案"><div class="time fr"><span class="day">04-14</span><span>2023</span></div><h3>中药生产质量管理系统追溯解决方案</h3><div class="txt">一、建设背景通过对中药材种植和养殖基地、中药饮片生产企业和中成药生产企业、中药饮片经营企业、医疗机构及零售药店等环节的关键信息建立电子化登记、管理和查询，构建“中药材溯源平台系统”，溯…</div></a></li>
+
+          <li class="item clearfix"><a title="食品行业质量管理系统追溯解决方案"><img class="fl" src="@/assets/zr/z5.png" alt="食品行业质量管理系统追溯解决方案"><div class="time fr"><span class="day">04-14</span><span>2023</span></div><h3>食品行业质量管理系统追溯解决方案</h3><div class="txt">一、项目背景民以食为天，食品安全是老百姓基本的保障，为了快速准确了解食品生产过程，及时处理问题产品，掌握下游各级经营状况，降低企业物流成本,，掌握产品实时流向，快速冻结和召回问题产品。…</div></a></li>
+        </ul>
+
+
+
+
+        <!--分页样式-->
+
 
 
       </div>
+    </div>
+    <div v-if="navId===5">
+      <div class="content aboutPagePC clearfix aos-init aos-animate" aos="fade-up" aos-easing="ease" aos-duration="700" aos-delay="100">
+        <div class="txtcon"><h1 style="text-align: center;">
+          <span style="font-size: 36px;"><strong>质量系统定制</strong></span>
+        </h1>
+          <p>
+            <br>
+          </p>
+          <p>
+            <br>
+          </p>
+          <p>
+            <span style="background-color: rgb(255, 255, 255); color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px;"><span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; background-color: rgb(255, 255, 255);"><span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; text-wrap: wrap; background-color: rgb(255, 255, 255);"><span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; text-wrap: wrap; background-color: rgb(255, 255, 255);"><a title="质量管理系统" target="_blank" class="sitelink">质量管理系统</a>是企业保证产品和服务质量的重要手段，<span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; text-wrap: wrap; background-color: rgb(255, 255, 255);">它涵盖了从原材料采购到生产制造、产品销售和售后服务的全过程</span>然而，由于不同企业的需求各异，通用的<a title="质量管理系统" target="_blank" class="sitelink">质量管理系统</a>并不能完全满足所有企业的需求。因此，定制开发<a title="质量管理系统" target="_blank" class="sitelink">质量管理系统</a>成为了许多企业的选择</span></span>。</span></span>
+          </p>
+          <p>
+            <span style="background-color: rgb(255, 255, 255); color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px;"><span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; background-color: rgb(255, 255, 255);"><br></span></span>
+          </p>
+          <p style="text-align: center;">
+            <img src="@/assets/zr/2024011640222061.png" title="星服质量管理系统定制开发" alt="星服质量管理系统定制开发" border="0" vspace="0">
+          </p>
+          <p>
+            <br>
+          </p>
+          <p>
+            <span style="background-color: rgb(255, 255, 255); color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px;"></span><br>
+          </p>
+          <h2>
+            <strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">一、<a  title="质量管理系统" target="_blank" class="sitelink">质量管理系统</a>定制开发的步骤：</span></strong>
+          </h2>
+          <p>
+            <strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;"><br></span></strong>
+          </p>
+          <p style="text-align: center;">
+            <strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;"><img src="@/assets/zr/2024011638835597.png" title="售后服务系统定制开发步骤" alt="售后服务系统定制开发步骤" style="text-align: center; text-wrap: wrap; " border="0" vspace="0"><br></span></strong>
+          </p>
+          <p>
+            <strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;"><br></span></strong>
+          </p>
+          <p>
+            <span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; background-color: rgb(255, 255, 255);">1、<span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; text-wrap: wrap; background-color: rgb(255, 255, 255);">第一步是需求分析。在开始定制开发之前，企业需要明确自身的需求。这包括确定需要管理的过程和关键指标，以及对系统功能和界面的具体要求</span><span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; background-color: rgb(255, 255, 255);"><span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; text-wrap: wrap; background-color: rgb(255, 255, 255);"></span></span></span>
+          </p>
+          <p>
+            <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;">2、<span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; text-wrap: wrap; background-color: rgb(255, 255, 255);">第二步是系统设计。在需求分析的基础上，开发团队将根据企业的需求制定系统设计方案。这包括确定系统的架构、功能模块和数据流程等</span><span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; text-wrap: wrap; background-color: rgb(255, 255, 255);"><span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; text-wrap: wrap; background-color: rgb(255, 255, 255);"></span>。</span></span>
+          </p>
+          <p>
+            <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;">3、<span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; text-wrap: wrap; background-color: rgb(255, 255, 255);">第三步是系统开发。在设计方案确定后，开发团队将开始系统的编码和测试工作。开发人员将根据设计方案编写代码，并进行单元测试和集成测试，以保证系统的质量和稳定性</span><span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; background-color: rgb(255, 255, 255);"><span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; text-wrap: wrap; background-color: rgb(255, 255, 255);"><span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; text-wrap: wrap; background-color: rgb(255, 255, 255);">。</span></span></span></span>
+          </p>
+          <p>
+            <span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; background-color: rgb(255, 255, 255);">4、最后是部署和培训，<span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; text-wrap: wrap; background-color: rgb(255, 255, 255);">将系统部署到企业的服务器上，并进行必要的配置和测试。同时我们还会为企业的员工提供培训，使他们能够熟练地使用<a  title="质量管理系统" target="_blank" class="sitelink">质量管理系统</a></span></span><br><br>
+          </p>
+          <h2>
+            <span style="font-size: 18px;"><strong><span style="font-size: 18px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">二、定制的软件清单</span></strong></span>
+          </h2>
+          <p style="text-align: left;">
+            <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 16px;"><a  title="质量管理系统" target="_blank" class="sitelink">质量管理系统</a>定制开发服务包括<a  title="质量管理系统" target="_blank" class="sitelink">质量管理系统</a>定制开发、追溯管理系统和售后服务系统定制开发</span>
+          </p>
+          <p style="text-align: center;">
+            <img src="@/assets/zr/2024011641970317.png" title="image.png" alt="image.png">
+          </p>
+          <h2>
+            <strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;">三、<a  title="质量管理系统" target="_blank" class="sitelink">质量管理系统</a>定制的好处</span></strong>
+          </h2>
+          <p>
+            <strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 18px;"></span></strong>
+          </p>
+          <p>
+            <span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; background-color: rgb(255, 255, 255);">1、<a title="质量管理系统" target="_blank" class="sitelink">质量管理系统</a>可以帮助企业提高质量管控的水平、产品缺陷追溯的效率和<span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; text-wrap: wrap; background-color: rgb(255, 255, 255);">提高售后服务的质量和满意度</span>。</span>
+          </p>
+          <p>
+            <span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; background-color: rgb(255, 255, 255);">2、<span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; text-wrap: wrap; background-color: rgb(255, 255, 255);">定制开发适合自身需求的<a  title="质量管理系统" target="_blank" class="sitelink">质量管理系统</a>，运用起来得心应手，</span>为<span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; text-wrap: wrap; background-color: rgb(255, 255, 255);">企业节省人力物力成本，提高工作效率</span>。</span>
+          </p>
+          <p>
+            <span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; background-color: rgb(255, 255, 255);">3、<span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; text-wrap: wrap; background-color: rgb(255, 255, 255);">通过系统的数据分析和报表功能，企业可以及时了解生产个环节的运行状况和质量管控情况，从而提前做出相应的决策</span>。</span>
+          </p>
+          <p>
+            <span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; background-color: rgb(255, 255, 255);">4、<span style="color: rgb(36, 41, 47); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Noto Sans&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;; font-size: 15px; text-wrap: wrap; background-color: rgb(255, 255, 255);">定制开发的<a  title="质量管理系统" target="_blank" class="sitelink">质量管理系统</a>将成为企业的重要竞争优势，推动企业的可持续发展</span>。</span>
+          </p>
+          <p>
+            <span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><br></span><br>
+          </p>
+          <p>
+            <br>
+          </p></div></div>
 
-      <div class="caseMain">
-        <div id="icase" class="caseList w1200 clearfix">
-          <div class="bd">
-            <ul class="list">
-
-
-              <li aos="fade-left" aos-delay="100" aos-duration="700" aos-easing="ease" class="aos-init aos-animate"><a
-                  href="http://qms.messoft.net.cn/list/94/336.html" title="美的冷柜高新区工厂售后服务系统"><img
-                  alt="美的冷柜高新区工厂售后服务系统" class="img" src="/upfile/202401/2024011653155277.png">
-                <div class="txt"><h2 class="tit">美的冷柜高新区工厂售后服务系…</h2>
-                  <p class="cont">美的冷柜合肥工业园位于安徽省合肥市高新区玉兰大道，是中国最具规模的…</p>
-                  <p class="more">MORE &gt;</p></div>
-              </a></li>
-
-              <li aos="fade-left" aos-delay="200" aos-duration="700" aos-easing="ease" class="aos-init aos-animate"><a
-                  href="http://qms.messoft.net.cn/list/93/335.html" title="江淮华霆追溯管理系统"><img
-                  alt="江淮华霆追溯管理系统"
-                  class="img"
-                  src="/upfile/202312/2023122964270393.png">
-                <div class="txt"><h2 class="tit">江淮华霆追溯管理系统</h2>
-                  <p class="cont">江淮华霆动力电池有限公司是一家新能源汽车动力系统研发商，主营汽车零…</p>
-                  <p class="more">MORE &gt;</p></div>
-              </a></li>
-
-              <li aos="fade-left" aos-delay="300" aos-duration="700" aos-easing="ease" class="aos-init aos-animate"><a
-                  href="http://qms.messoft.net.cn/list/92/325.html" title="安徽美芝性能线质量管理系统"><img
-                  alt="安徽美芝性能线质量管理系统"
-                  class="img"
-                  src="/upfile/202401/2024011656964045.png">
-                <div class="txt"><h2 class="tit">安徽美芝性能线质量管理系统</h2>
-                  <p class="cont">安徽美芝制冷设备有限公司是GMCC美芝四大生产基地之一，位于安徽省合肥…</p>
-                  <p class="more">MORE &gt;</p></div>
-              </a></li>
-            </ul>
-          </div>
-          <div class="hd">
-            <span class="prev icon"></span>
-            <span class="next icon"></span>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -1600,7 +1991,8 @@ export default {
     return {
       csrNewsId: 1,
       csrId: 0,
-      fadeId: 1
+      fadeId: 1,
+      navId: 1
     }
   },
   methods: {
@@ -1612,6 +2004,9 @@ export default {
     },
     getfade(id) {
       this.fadeId = id
+    },
+    getnav(id) {
+      this.navId = id
     }
   }
 }
@@ -2912,6 +3307,498 @@ export default {
     height: 476px;
     background: url('@/assets/zr/case_bg.png') no-repeat;
     background-size: 100% 476px;
+
+    .w1200 {
+      width: 1200px;
+      margin: 0 auto;
+
+      .bd {
+        position: relative;
+        width: 100%;
+        padding-top: 60px;
+        z-index: 12;
+
+        .list {
+          width: 106%;
+          list-style: none;
+
+          li:hover {
+            a {
+              .txt {
+                background: #0e4b9e;
+                color: white !important;
+
+                .tit {
+                  color: white !important;
+                }
+
+                .cont {
+                  color: white !important;
+                }
+
+                .more {
+                  color: white !important;
+                }
+              }
+            }
+          }
+
+          li {
+            float: left;
+            width: 280px;
+            height: 356px;
+            margin-right: 26px;
+
+            a {
+              text-decoration: none;
+              outline: 0;
+              -webkit-transition: all .3s ease-in-out 0s;
+              -moz-transition: all .3s ease-in-out 0s;
+              transition: all .3s ease-in-out 0s;
+              color: #333333;
+
+              .img {
+                display: block;
+                width: 280px;
+                height: 210px;
+              }
+
+              .txt {
+                width: 240px;
+                height: 146px;
+                padding: 0 20px;
+                background: #fff;
+                transition: all ease 600ms;
+
+                .tit {
+                  padding-top: 20px;
+                  font-size: 16px;
+                  color: #666;
+                  line-height: 30px;
+                  font-weight: bold;
+                }
+
+                .cont {
+                  font-size: 14px;
+                  color: #999;
+                  line-height: 24px;
+                }
+
+                .more {
+                  margin-top: 12px;
+                  font-size: 14px;
+                  color: #999;
+                  line-height: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .hd {
+        position: absolute;
+        top: 224px;
+        width: 1200px;
+        height: 30px;
+
+
+        .prev {
+          position: absolute;
+          display: block;
+          width: 29px;
+          height: 29px;
+          cursor: pointer;
+          background-position: 0 0;
+          left: -6.6%;
+        }
+
+        .next {
+          background-position: -36px 0;
+          right: -6.6%;
+          position: absolute;
+          display: block;
+          width: 29px;
+          height: 29px;
+          cursor: pointer;
+        }
+
+        .icon {
+          background: url('@/assets/zr/icon.png') no-repeat;
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+    }
   }
+}
+
+.aboutus {
+  height: 520px;
+
+  .about {
+    padding-top: 60px;
+    width: 1200px;
+    margin: 0 auto;
+
+    .aboutImg {
+      position: absolute;
+      width: 590px;
+      height: 396px;
+
+      .aboutBg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 280px;
+        height: 396px;
+        background: #0E4B9E;
+        z-index: 2;
+      }
+
+      .aImg {
+        position: relative;
+        z-index: 3;
+
+        .img {
+          margin-left: 30px;
+          width: 560px;
+          height: 345px;
+        }
+
+        .tit {
+          padding-left: 18px;
+          margin-left: 30px;
+          background: url('@/assets/zr/triger.png') no-repeat left center;
+          color: #fff;
+          text-transform: uppercase;
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .aboutCont {
+      position: relative;
+      float: right;
+      width: 506px;
+      height: 396px;
+
+      .about_tit {
+        padding-top: 60px;
+
+        .cName {
+          font-size: 24px;
+          color: #333;
+          line-height: 40px;
+          font-weight: bold;
+        }
+
+        .eName {
+          margin-top: 8px;
+          font-size: 12px;
+          color: #999;
+          line-height: 12px;
+        }
+
+        .line {
+          width: 140px;
+          height: 1px;
+          margin-top: 20px;
+          background-color: #9ad9f3;
+          margin-left: -90px;
+        }
+      }
+
+      .cont {
+        margin-top: 30px;
+        font-size: 14px;
+        line-height: 26px;
+        color: #666;
+      }
+
+      .line1 {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 30px;
+        height: 3px;
+        background-color: #0E4B9E;
+      }
+
+      .more {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding-left: 52px;
+        font-size: 14px;
+        line-height: 14px;
+        background: url('@/assets/zr/line1.png') no-repeat left center;
+        color: #999;
+      }
+    }
+  }
+}
+
+.companyNews {
+  width: 100%;
+  height: 594px;
+  background: url('@/assets/zr/news_bg.png') no-repeat;
+  background-size: 100% 594px;
+
+  .w1200 {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    .head_tit {
+      position: relative;
+      margin-bottom: 20px;
+      padding-top: 60px;
+
+      .title {
+        float: left;
+
+        .tit {
+          font-size: 24px;
+          color: #fff;
+          line-height: 24px;
+          font-weight: bold;
+        }
+
+        .etit {
+          margin-top: 4px;
+          font-size: 12px;
+          color: #999;
+          line-height: 14px;
+          text-transform: uppercase;
+        }
+      }
+
+      .more {
+        padding-left: 52px;
+        margin-top: 14px;
+        float: right;
+        font-size: 14px;
+        line-height: 14px;
+        background: url('@/assets/zr/line1.png') no-repeat left center;
+        color: #999;
+      }
+    }
+
+    .showNew {
+      margin-top: 20px;
+
+      .left {
+        float: left;
+        width: 440px;
+
+        .rest {
+          position: relative;
+          width: 440px;
+          height: 400px;
+
+          .bd {
+            .tempWrap {
+              ul {
+                list-style: none;
+
+                li {
+                  position: relative;
+                  width: 440px;
+                  height: 400px;
+
+                  a {
+                    text-decoration: none;
+                    outline: 0;
+                    -webkit-transition: all .3s ease-in-out 0s;
+                    -moz-transition: all .3s ease-in-out 0s;
+                    transition: all .3s ease-in-out 0s;
+                    color: #333333;
+
+                    img {
+                      display: block;
+                      width: 440px;
+                      height: 256px;
+                    }
+
+                    .txt {
+                      width: 440px;
+                      height: 144px;
+                      background: #fff;
+                      transition: all ease 600ms;
+
+                      .tit {
+                        padding-top: 30px;
+                        margin-left: 24px;
+                        font-size: 16px;
+                        color: #666;
+                        text-align: left;
+                        line-height: 30px;
+                        font-weight: bold;
+                      }
+
+                      .cont {
+                        width: 386px;
+                        margin-top: 8px;
+                        margin-left: 24px;
+                        font-size: 14px;
+                        color: #999;
+                        line-height: 24px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .right {
+        float: left;
+        width: 730px;
+        margin-left: 30px;
+
+        .showList {
+          width: 106%;
+
+          ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+              position: relative;
+              float: left;
+              width: 345px;
+              height: 190px;
+              margin-bottom: 20px;
+              margin-right: 20px;
+              background: #fff;
+              transition: all ease 600ms;
+              cursor: pointer;
+              overflow: hidden;
+
+              a {
+                width: 100%;
+                display: block;
+                cursor: pointer;
+                text-decoration: none;
+
+                .time {
+                  float: left;
+                  width: 60px;
+                  padding-top: 70px;
+                  margin-left: 16px;
+
+                  .day {
+                    font-size: 42px;
+                    color: #f6b827;
+                    line-height: 36px;
+                    width: 100%;
+                    height: 50px;
+                    /* line-height: 50px; */
+                    text-align: center;
+                    font-weight: bold;
+                  }
+
+                  .year {
+                    margin-top: 6px;
+                    font-size: 12px;
+                    color: #666;
+                    line-height: 14px;
+                    text-indent: 3px;
+                  }
+                }
+
+                .txt {
+                  float: left;
+                  width: 250px;
+                  margin-left: 12px;
+
+                  .tit {
+                    padding-top: 40px;
+                    font-size: 16px;
+                    color: #666;
+                    text-align: left;
+                    line-height: 36px;
+                    width: 100%;
+                    height: 50px;
+                    font-weight: bold;
+                  }
+
+                  .cont {
+                    font-size: 14px;
+                    color: #999;
+                    line-height: 24px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.aboutPagePC {
+  padding: 10px 10px;
+  width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+
+  .txtcon {
+    h1 {
+      font-size: 20px;
+      font-weight: bolder;
+    }
+  }}
+.w1200 {
+  width: 1200px;
+  margin: 0 auto;ul{
+  list-style: none; .item {
+    width: 100%;
+    height: 188px;
+    margin-bottom: 20px;
+    background: #fff;a {
+      width: 100%;
+      height: 100%;
+      display: block;
+      cursor: pointer;text-decoration: none;img {
+        width: 224px;
+        height: 188px;
+        display: block;
+        margin-right: 10px;
+      }.fl {
+         float: left;
+       }.time {
+          width: 150px;
+          padding-top: 45px;
+          font-family: arial;
+          font-size: 20px;
+          color: #999; .day {
+          font-size: 40px;
+          line-height: 45px;
+          display: block;
+        }
+        }.fr {
+           float: right;
+         }
+      h3{
+        font-size: 14px;
+        font-weight: normal;
+      }.txt {
+         color: #999999;
+         line-height: 24px;
+         height: 48px;
+         padding-right: 10px;
+         overflow: hidden;
+       }
+    }
+  }
+}
 }
 </style>
