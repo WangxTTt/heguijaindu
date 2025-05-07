@@ -89,8 +89,8 @@ export default {
         {
           id: 8,
           title: "法治体系",
-          path: "/Transition1",
-          pathName: "Transition1",
+          path: "/Fazhi",
+          pathName: "Fazhi",
         },
       ],
       navActiveState: "",

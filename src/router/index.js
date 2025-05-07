@@ -70,6 +70,11 @@ const router = new VueRouter({
             name: 'Cooperation',
             component: () => import('../views/Cooperation/Cooperation.vue')
         },
+        {
+            path: '/Fazhi',
+            name: 'Fazhi',
+            component: () => import('../views/Fazhi/Fazhi.vue')
+        },
     ]
 });
 
